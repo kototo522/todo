@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    id("com.diffplug.spotless") version "7.0.2"
 }
 
 android {
@@ -47,6 +48,17 @@ android {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
+}
+
+spotless {
+    ratchetFrom("origin/main")
+    kotlin {
+        target("**/*.kt")
+        ktlint("1.5.0")
+    }
+}
+tasks.named("build") { // Spotless: buildタスクと同時に spotlessもapplyする
+    dependsOn("spotlessApply")
 }
 
 dependencies {
