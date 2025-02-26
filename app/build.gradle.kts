@@ -6,12 +6,12 @@ plugins {
 
 android {
     namespace = "com.example.todo"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.example.todo"
         minSdk = 24
-        targetSdk = 34
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
@@ -57,9 +57,9 @@ spotless {
         ktlint("1.5.0")
     }
 }
-tasks.named("build") { // Spotless: buildタスクと同時に spotlessもapplyする
-    dependsOn("spotlessApply")
-}
+//tasks.named("build") { // Spotless: buildタスクと同時に spotlessもapplyする
+//    dependsOn("spotlessApply")
+//}
 
 dependencies {
 
