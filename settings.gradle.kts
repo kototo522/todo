@@ -21,3 +21,7 @@ dependencyResolutionManagement {
 
 rootProject.name = "todo"
 include(":app")
+include(":home")
+include(":create")
+include(":setting")
+include(":data")
